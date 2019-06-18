@@ -1,0 +1,8 @@
+mixin favorites()
+    ul
+        each duck in favs
+            li
+                a(href=duck.url)
+                    h2 #{duck.title}
+                    img(src=duck.image)
+                    span #{duck.price}

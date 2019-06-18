@@ -1,0 +1,11 @@
+@import './vendor/bulma-0.0.3/css/main.css';
+@import './vendor/fontawesome-5.8.2/css/all.min.css';
+
+html{
+    background-color: aliceblue
+}
+
+img {
+    max-width: 200px;
+}
+

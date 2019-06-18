@@ -1,0 +1,12 @@
+mixin results()
+    ul.columns.is-multiline.is-mobile.is-centered
+        each duck in ducks
+            div.column.is-5-desktop.is-5-tablet.is-10-mobile
+                li.box
+                    a(href=duck.url)
+                        h2 #{duck.title}
+                        img(src=duck.image)
+                        span #{duck.price}
+                    form(method="POST")
+                        button(name='toggleFav' value=duck.id)
+                            i(class=duck.isFav ? 'fas fa-heart' : 'far fa-heart')
