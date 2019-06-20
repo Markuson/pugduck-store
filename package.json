@@ -1,11 +1,33 @@
 {
-  "name": "pugduck-store-deploy",
+  "name": "web-app",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "dependencies": {
+    "atob": "^2.1.2",
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "isomorphic-fetch": "^2.2.1",
+    "mongoose": "^5.6.0",
+    "node-sass": "^4.12.0",
+    "pug": "^2.0.3",
+    "session-file-store": "^1.2.0"
   },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  },
+  "scripts": {
+    "start": "node .",
+    "watch": "nodemon --ignore ./sessions .",
+    "debug": "node debug .",
+    "test": "jest",
+    "test:debug": "node debug node_modules/.bin/jest --runInBand --watchAll"
+  },
+  "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": ""
 }
