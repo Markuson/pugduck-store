@@ -3,15 +3,34 @@ extends ../index
 include ../feedback/index
 
 block content
-    container.box
-        h2.title.is-2 Register
-        form(method='post' action='/register')
-            input(type='text' name='name' required='' placeholder='name' autofocus='' value=name)
-            input(type='text' name='surname' required='' placeholder='surname' value=surname)
-            input(type='email' name='email' required='' placeholder='e-mail' value=email)
-            input(type='password' name='password' required='' placeholder='password')
-            if message
-                +feedback(message)
-            button Register
-        span  or 
-        a(href="/login") Login
+    div.columns.my-vcentered
+        container.box.column.is-half.has-text-centered
+            h2.title.is-2 Register
+            form(method='post' action='/register')
+                div.field.is-horizontal
+                    div.field-body
+                        div.field
+                            p.control.has-icons-left.is-expanded
+                                input.input(type='text' name='name' required='' placeholder='name' autofocus='' value=name)
+                                span.icon.is.small.is-left
+                                    i.fas.fa-user
+                        div.field
+                            p.control.is-expanded
+                                input.input(type='text' name='surname' required='' placeholder='surname' value=surname)
+                div.field
+                    p.control.has-icons-left
+                        input.input(type='email' name='email' placeholder='Email' autofocus='' required='' value=email)
+                        span.icon.is-small.is-left
+                            i.fas.fa-envelope
+                div.field
+                    p.control.has-icons-left
+                        input.input(type='password' name='password' placeholder='Password' required='')
+                        span.icon.is-small.is-left
+                            i.fas.fa-lock
+                div.field
+                    p.control
+                    button.button.is-success Register
+                span  or 
+                a(href="/login") Login
+                if message
+                    +feedback(message)

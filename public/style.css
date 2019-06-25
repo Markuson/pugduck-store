@@ -1,11 +1,38 @@
 @import './vendor/bulma-0.0.3/css/main.css';
 @import './vendor/fontawesome-5.8.2/css/all.min.css';
 
+
+@font-face {
+    font-family: 'beyondTheMountains';
+    src: url("./assets/fonts/beyond_the_mountains.otf") format("opentype"),
+        url('./assets/fonts/beyond_the_mountains.ttf')  format('truetype');
+}
+
+
 html{
-    background-color: aliceblue
+    background-image: url(assets/images/background.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 img {
     max-width: 200px;
 }
 
+.my-vcentered{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+}
+
+.my-font {
+    font-family: beyondTheMountains;
+}
+
+.m1 {
+    margin: 50px;
+}

@@ -3,13 +3,26 @@ extends ../index
 include ../feedback/index
 
 block content
-    container.box
-        h1.title.is-2 Login
-        form(method='post' action='/login')
-            input(type='text' name='email' placeholder='email' autofocus='' required='' value=email)
-            input(type='password' name='password' placeholder='password' required='')
-            if message
-                +feedback(message)
-            button Login
-        span  or 
-        a(href="/register") Register
+    if message
+        +feedback(message)
+    div.columns.my-vcentered
+        container.column.is-half.has-text-centered
+            .box
+                h1.title.is-2 Login
+                form(method='post' action='/login')
+                    div.field
+                        p.control.has-icons-left
+                            input.input(type='email' name='email' placeholder='Email' autofocus='' required='' value=email)
+                            span.icon.is-small.is-left
+                                i.fas.fa-envelope
+                    div.field
+                        p.control.has-icons-left
+                            input.input(type='password' name='password' placeholder='Password' required='')
+                            span.icon.is-small.is-left
+                                i.fas.fa-lock
+                    div.field
+                        p.control
+                        button.button.is-success Login
+                    span  or 
+                    a(href="/register") Register
+            

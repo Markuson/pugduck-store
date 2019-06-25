@@ -1,8 +1,10 @@
 extends ../index
 
 block content
-    container.box
-        h1.title.is-1 Welcome to this Web Application
-        a(href='/register') Register
-        |  or 
-        a(href='/login') Login
+    div.columns.my-vcentered
+        container.box.column.is-half.has-text-centered
+            h1.title.is-1.my-font.m1 The PugDuck Store
+            div.m1
+                a.button.is-fullwidth(href='/register') Register
+                p or
+                a.button.is-fullwidth(href='/login') Login

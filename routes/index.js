@@ -51,10 +51,17 @@ router.post('/login', [checkLogin('/home'), urlencodedParser], (req, res) => {
 router.get('/home', checkLogin('/', false), (req, res) => {
     const { logic, session } = req
 
-    logic.retrieveUser()
-        .then(({ name, favList }) => {
-            session.favList = favList
-            return res.render('home', {name})
+    logic.searchDucks('')
+        .then(ducks => {
+            ducks = ducks.map(({ id, title, imageUrl: image, price }) =>{
+                isFav = session.favList.some(fav => fav == id)
+                return { url: `/home/duck/${id}`, title, image, price, isFav, id}
+            })
+            return logic.retrieveUser()
+                .then(({ name, favList }) => {
+                    session.favList = favList
+                    return res.render('home', {name, ducks})
+                })
         })
         .catch(({ message }) => res.render('home', {message}))
 })
