@@ -1,4 +1,4 @@
-# The Pugduck store:
+# The Pugduck store: (under construction)
 
 [Demo](https://pugduck-store.herokuapp.com/)
 

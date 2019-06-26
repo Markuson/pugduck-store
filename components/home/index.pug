@@ -1,7 +1,7 @@
 extends ../index
 
 include ../feedback/index
-include ../search/index
+//- include ../search/index
 include ../results/index
 include ../detail/index
 include ../favorites/index
@@ -9,15 +9,8 @@ include ../navbar/index
 
 block content
     +navBar()
-    container.box
-        h1.title.is-1 Hola, #{name}!
-        form(action='/logout' method='post')
-            button Logout
-        form(action='/home/favorites')
-            button Favorites
-        +search(query)
-        if message
-            +feedback(message)
+    if message
+        +feedback(message)
     if (ducks)
         +results(ducks)
     if (duck)
