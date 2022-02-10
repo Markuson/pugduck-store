@@ -12,7 +12,7 @@
     "express-session": "^1.16.1",
     "isomorphic-fetch": "^2.2.1",
     "mongoose": "^5.6.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "pug": "^2.0.3",
     "session-file-store": "^1.2.0"
   },
